@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/myCoordinatorLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.oslo7.tdjpro.ShowItemActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_top"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_weight="1"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
+        android:id="@+id/nofocus"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="0px"
+        android:layout_height="0px"/>
+
+    <ScrollView
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/taskicon"
+                    android:contentDescription="@string/task"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_action_assignment"/>
+
+                <TextView
+                    android:id="@+id/due"
+                    android:layout_marginTop="20dp"
+                    android:layout_centerInParent="true"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/layout2"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/task"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/task_name"
+                    android:hint="@string/task"
+                    android:onClick="onTaskClick"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:background="@drawable/bg_edittext"
+                    android:maxLength="50"
+                    android:inputType="textCapSentences"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:padding="10dp"
+                android:layout_below="@+id/layout2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/task_description"
+                    android:onClick="onDescriptionClick"
+                    android:contentDescription="@string/description"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:gravity="top"
+                    android:minLines="3"
+                    android:maxLines="3"
+                    android:scrollbars="vertical"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:maxLength="100"
+                    android:background="@drawable/bg_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:padding="10dp"
+                android:layout_below="@+id/layout3"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/feedback_info"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/feedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/feedback"
+                    android:onClick="onFeedbackClick"
+                    android:contentDescription="@string/feedback"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:gravity="top"
+                    android:minLines="2"
+                    android:maxLines="2"
+                    android:scrollbars="vertical"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:maxLength="50"
+                    android:background="@drawable/bg_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_below="@+id/layout4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/value"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"/>
+
+                <TextView
+                    android:id="@+id/status"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"/>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_bottom"
+        android:layout_below="@+id/layout4"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="end|bottom"
+        android:background="@color/colorPrimary"
+        app:layout_scrollFlags="enterAlways"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+
+        <RelativeLayout
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/button_delete"
+                android:contentDescription="@string/delete_assignment"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_action_delete"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_centerVertical="true"
+                android:onClick="deleteAssignment"
+                android:padding="15dip"/>
+
+            <ImageView
+                android:id="@+id/button_date"
+                android:contentDescription="@string/change_date"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_action_date"
+                android:onClick="buttonChangeDate"
+                android:layout_centerVertical="true"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                android:padding="15dip"/>
+
+            <ImageView
+                android:id="@+id/button_reset"
+                android:contentDescription="@string/reset"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_action_reset"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_centerVertical="true"
+                android:onClick="buttonRevert"
+                android:visibility="gone"
+                android:padding="15dip"/>
+
+            <ImageView
+                android:id="@+id/button_approve"
+                android:contentDescription="@string/approved"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_action_thumb"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:layout_centerVertical="true"
+                android:onClick="buttonApprove"
+                android:visibility="gone"
+                android:padding="15dip"/>
+
+            <ImageView
+                android:id="@+id/button_remind"
+                android:contentDescription="@string/reminder"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_action_remind"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:layout_centerVertical="true"
+                android:onClick="buttonRemind"
+                android:visibility="gone"
+                android:padding="15dip"/>
+
+
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

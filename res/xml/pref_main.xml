@@ -1,0 +1,53 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/general"
+        android:layout="@layout/preference_category">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="notifications"
+            android:summaryOn="@string/on"
+            android:summaryOff="@string/off"
+            android:title="@string/pref_title_notifications" />
+
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/currency_list"
+            android:entryValues="@array/currency_index"
+            android:key="chosen_currency"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"
+            android:title="@string/currency" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/terms"
+        android:layout="@layout/preference_category">
+        <PreferenceScreen
+            android:title="@string/click_to_read">
+            <intent android:action="com.oslo7.tdjpro.activities.TermsActivity"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/advertising"
+        android:layout="@layout/preference_category">
+        <PreferenceScreen
+            android:title="@string/click_to_read">
+            <intent android:action="com.oslo7.tdjpro.activities.AdvertisingActivity"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/close_account"
+        android:layout="@layout/preference_category">
+        <PreferenceScreen
+            android:title="@string/click_to_close">
+            <intent android:action="com.oslo7.tdjpro.activities.CloseAccountActivity"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

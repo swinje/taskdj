@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.oslo7.tdjpro.CloseAccountActivity">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_action_warning"
+        />
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/close_account"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@android:color/holo_red_light" />
+
+    <TextView
+        android:id="@+id/again"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/login_again"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@android:color/holo_red_light" />
+
+
+    <GridLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:rowCount="1">
+
+        <Button
+            android:id="@+id/closeOK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="closeOK"
+            android:text="@string/ok" />
+
+        <Button
+            android:id="@+id/closeCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="closeCancel"
+            android:text="@string/cancel" />
+    </GridLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:theme="@style/ProgressBarStyle"
+        style="?android:attr/progressBarStyleInverse"
+        android:indeterminateOnly="true"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+</LinearLayout>

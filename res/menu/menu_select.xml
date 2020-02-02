@@ -1,0 +1,32 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.oslo7.tdjpro.SelectActivity">
+    <group>
+        <item
+            android:id="@+id/refresh"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/ic_action_reload"
+            android:title="@string/refresh" />
+    </group>
+    <group>
+    <item
+        android:id="@+id/settings"
+        android:title="@string/title_activity_settings" />
+    </group>
+    <group>
+        <item
+            android:id="@+id/adfree"
+            android:title="@string/upgrade" />
+    </group>
+    <group>
+    <item
+        android:id="@+id/logout"
+        android:title="@string/logout" />
+    </group>
+    <group>
+        <item
+            android:id="@+id/version"
+            android:title="@string/version" />
+    </group>
+</menu>
